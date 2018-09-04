@@ -376,6 +376,8 @@ def performDetect(imagePath="data/dog.jpg", thresh= 0.25, configPath = "./cfg/yo
             imcaption = []
             for detection in detections:
                 label = detection[0]
+                if label != 'sports ball':
+                    continue
                 confidence = detection[1]
                 pstring = label+": "+str(np.rint(100 * confidence))+"%"
                 imcaption.append(pstring)
